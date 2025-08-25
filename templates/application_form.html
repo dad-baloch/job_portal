@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for {{job.title}} - Daad Baloch</title>
+    {% include 'bootstrap.html' %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+
+    <div class="container mt-5 mb-5">
+        <div class="card p-4 shadow-lg border-0">
+            <h2 class="card-title text-center mb-4">Application for <span class="text-primary">{{job.title}}</span></h2>
+            <hr class="mb-4">
+
+            <form action="/job/{{job['id']}}/apply" method="post">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="fullName" class="form-label"><b>Full Name <span
+                                    class="text-danger">*</span></b></label>
+                        <input type="text" class="form-control" id="fullName" name="full_name" placeholder="Daad Baloch"
+                            required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email" class="form-label"><b>Email <span class="text-danger">*</span></b></label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="daad@gmail.com"
+                            required>
+                    </div>
+                    <div class="col-12">
+                        <label for="linkedinUrl" class="form-label"><b>LinkedIn URL</b></label>
+                        <input type="url" class="form-control" id="linkedinUrl" name="linkedin"
+                            placeholder="https://linkedin.com/in/yourprofile">
+                    </div>
+                    <div class="col-12">
+                        <label for="education" class="form-label"><b>Education</b></label>
+                        <textarea class="form-control" id="education" name="education" rows="3"
+                            placeholder="List your educational background..."></textarea>
+                    </div>
+                    <div class="col-12">
+                        <label for="workExperience" class="form-label"><b>Work Experience</b></label>
+                        <textarea class="form-control" id="workExperience" name="work_experience" rows="5"
+                            placeholder="Describe your relevant work experience..."></textarea>
+                    </div>
+                    <div class="col-12">
+                        <label for="resumeUrl" class="form-label"><b>Resume URL <span
+                                    class="text-danger">*</span></b></label>
+                        <input type="url" class="form-control" id="resumeUrl" name="resume_url"
+                            placeholder="https://drive.google.com/your-resume.pdf" required>
+                    </div>
+                    <div class="col-12 d-flex justify-content-between align-items-center mt-4">
+                        <button type="submit" class="btn btn-success btn-lg">Submit Application</button>
+                        <a href="/job/{{job.id}}" class="btn btn-outline-secondary btn-lg">Back to Job Details</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+
+</html>

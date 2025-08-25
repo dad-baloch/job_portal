@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Daad Baloch</title>
+    {% include 'bootstrap.html' %}
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+    <div class="container mt-5">
+        <div class="card p-4 shadow-lg border-0">
+            <h2 class="card-title text-center mb-4">Contact Us</h2>
+            <hr class="mb-4">
+            <form action="/contact/submit" method="post">
+                <div class="mb-3">
+                    <label for="name" class="form-label"><b>Name</b></label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label"><b>Email</b></label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label"><b>Message</b></label>
+                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    {% include 'footer.html' %}
+</body>
+
+</html>

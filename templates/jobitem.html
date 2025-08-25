@@ -1,0 +1,13 @@
+<div class="card mb-3 shadow-sm">
+    <div class="card-body row align-items-center">
+        <div class="col-md-8">
+            <h4 class="card-title">{{ job.title }}</h4>
+            <p class="mb-1"><strong>Location:</strong> {{ job.location }}</p>
+            <p class="mb-1"><strong>Salary:</strong> {{ job.currency }} {{ job.salary }}</p>
+        </div>
+        <div class="col-md-4 text-end">
+            <a href="/job/{{ job.id }}" class="btn btn-outline-primary me-2">View Details</a>
+            <a href="/job/{{ job.id }}/form" class="btn btn-success">Apply</a>
+        </div>
+    </div>
+</div>

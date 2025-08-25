@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{{job.title}} - Daad Baloch</title>
+    <link rel="stylesheet" href="style.css">
+    {% include 'bootstrap.html' %}
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+    <div class="container mt-5">
+        <div class="card p-4 shadow-sm">
+            <h1 class="card-title text-center mb-4">{{job.title}}</h1>
+            <hr>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <p class="h5"><strong>Location:</strong></p>
+                    <p>{{job.location}}</p>
+                </div>
+                <div class="col-md-6">
+                    <p class="h5"><strong>Salary:</strong></p>
+                    <p>{{job.currency}} {{job.salary}}</p>
+                </div>
+            </div>
+            <div class="mb-4">
+                <p class="h5"><strong>Responsibilities:</strong></p>
+                <p>{{job.responsibility}}</p>
+            </div>
+            <div class="mb-4">
+                <p class="h5"><strong>Requirements:</strong></p>
+                <p>{{job.requirements}}</p>
+            </div>
+            <div class="text-center mt-4">
+                <a href="/" type="button" class="btn btn-primary btn-lg">Back to Home</a>
+                <a href="/job/{{job.id}}/form" type="button" class="btn btn-primary btn-lg">Application Form</a>
+            </div>
+        </div>
+    </div>
+    {% include 'footer.html' %}
+
+</body>
+
+</html>

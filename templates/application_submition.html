@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Application Submitted - Daad Baloch</title>
+    {% include 'bootstrap.html' %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+
+    <div class="container mt-5 mb-5">
+        <div class="card p-4 shadow-lg text-center border-0">
+            <h1 class="card-title text-success mb-3">
+                <i class="bi bi-check-circle-fill me-2"></i> Your Application is Submitted Successfully!
+            </h1>
+            <p class="lead text-muted mb-4">
+                Thank you for applying. We will review your application and get back to you shortly.
+            </p>
+            <hr class="mb-4">
+
+            <div class="text-start">
+                <h4 class="text-primary mb-3">Submitted Details:</h4>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <p class="h6 text-muted mb-0">Full Name</p>
+                        <p class="h5">{{application['full_name']}}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="h6 text-muted mb-0">Email</p>
+                        <p class="h5">{{application['email']}}</p>
+                    </div>
+                    <div class="col-12">
+                        <p class="h6 text-muted mb-0">LinkedIn Profile</p>
+                        <p class="h5">
+                            <a href="{{application['linkedin']}}" target="_blank" class="text-decoration-none">
+                                {{application['linkedin']}}
+                                <i class="bi bi-box-arrow-up-right ms-1"></i>
+                            </a>
+                        </p>
+                    </div>
+                    <div class="col-12">
+                        <p class="h6 text-muted mb-0">Education</p>
+                        <p class="h5">{{application['education']}}</p>
+                    </div>
+                    <div class="col-12">
+                        <p class="h6 text-muted mb-0">Work Experience</p>
+                        <p class="h5">{{application['work_experience']}}</p>
+                    </div>
+                    <div class="col-12">
+                        <p class="h6 text-muted mb-0">Resume URL</p>
+                        <p class="h5">
+                            <a href="{{application['resume_url']}}" target="_blank" class="text-decoration-none">
+                                View Resume
+                                <i class="bi bi-file-earmark-person-fill ms-1"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <a href="/" class="btn btn-primary btn-lg">Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My Site</title>
+    {% include 'bootstrap.html' %}
+    <style>
+        h1 {
+            font-size: 40px;
+            font-family: Roboto;
+            font-weight: normal;
+            color: rgb(44, 219, 184);
+            text-align: center;
+        }
+
+        #banner {
+            width: 100%;
+            height: 360;
+            object-fit: cover;
+        }
+
+        h2 {
+            font-size: 28px;
+            font-family: Roboto;
+        }
+
+        p {
+            color: black;
+        }
+
+        #max {
+            max-width: 720px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    {% include 'navbar.html' %}
+    <div id="max">
+        <h1 style="margin-top: 10px;">Daad Baloch</h1>
+        <img id="banner" src="/static/banner.jpg" height="350">
+        <h2>Your Next Chapter Starts Here</h2>
+        <p>Are you ready to build what's next? We're on the hunt for passionate and innovative minds—from visionary
+            Software Engineers and meticulous Data Analysts to creative Marketing Managers and dedicated Customer
+            Support Specialists. Here, you'll find more than just a job; you'll find a culture of collaboration where
+            your ideas are valued, your growth is invested in, and your impact is immediate. If you're driven to solve
+            complex problems, create exceptional experiences, and help shape the future of our industry, we want you on
+            our team. Explore our open roles and discover how you can build a career you're proud of with us.</p>
+        <h2 class="mt-5">Open Positions</h2>
+        <div>
+            {% for job in jobs %}
+            {% include 'jobitem.html' %}
+            {% else %}
+            <p>No jobs available at the moment.</p>
+            {% endfor %}
+        </div>
+        <div style="text-align:center; margin-top: 40px;">
+            <a href="/contact" class="btn btn-outline-info">Contact us</a>
+            <p class="mt-3">&copy; 2025 Daad Baloch</p>
+        </div>
+    </div>
+    {% include 'footer.html' %}
+</body>
+
+</html>
