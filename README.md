@@ -82,3 +82,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 
 
+<img width="1359" height="653" alt="navbar_about" src="https://github.com/user-attachments/assets/a058d3f0-d9f6-4dd5-ac4b-f0146f790db6" />
+<img width="1359" height="653" alt="jobs" src="https://github.com/user-attachments/assets/18a3a228-1598-45e4-8a9c-27a1b5a65548" />
+<img width="1359" height="653" alt="footer_contact_us" src="https://github.com/user-attachments/assets/405f7110-30d7-4f1d-85f8-5d64f29f5777" />
+<img width="1359" height="653" alt="job_details" src="https://github.com/user-attachments/assets/afdadff5-7637-447d-9ad6-b40901e9a33a" />
+<img width="1359" height="653" alt="application_form" src="https://github.com/user-attachments/assets/fd46d9a3-0a9a-4f1c-962a-e9421bb550ab" />
