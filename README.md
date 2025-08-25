@@ -1,49 +1,84 @@
-# job_portal
-A simple Flask-based job portal for posting new jobs, browsing, and applying to jobs with database integration.
-Perfect 👌 Let’s make this repo look professional.
+# Flask Job Portal
+
+A simple, yet robust job portal web application built with Python and Flask. This project allows users to browse job listings, view detailed descriptions, and submit applications. It's designed to be a showcase of a full-stack web application using modern development practices.
 
 ## Features
-- Add, edit, and delete job listings
-- Browse job openings
-- Apply for jobs online
-- Database integration with SQLAlchemy ORM(Object Relational Mopping)
-- Responsive UI with HTML templates
 
-## Tech Stack
-- **Backend:** Python (Flask), SQLAlchemy ORM
-- **Frontend:** HTML, CSS (Jinja2 templates)
-- **Database:** MySQL, ORM
+- **Dynamic Job Listings:** Jobs are loaded dynamically from a MySQL database.
+- **View Job Details:** Click on any job to see a detailed page with responsibilities and requirements.
+- **Application Submission:** A user-friendly form to apply for jobs, with data being saved to the database.
+- **Contact Form:** A simple contact form for user inquiries.
+- **Responsive Design:** Built with Bootstrap for a seamless experience on all devices.
+- **SQLAlchemy ORM:** Utilizes SQLAlchemy for elegant and efficient database interactions.
 
-## Installation
+## Technologies Used
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/job-portal.git
-   cd job-portal
+- **Backend:** Python, Flask
+- **Database:** MySQL, SQLAlchemy
+- **Frontend:** HTML, CSS, Bootstrap 5
+- **Environment Variables:** `python-dotenv`
 
-2. Create a virtual environment:
+## Setup and Installation
 
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate
+To get this project up and running on your local machine, follow these steps:
 
-3. Install dependencies:
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/dad-baloch/Flask_with_Josh.git
+    cd "GitHub Projects/job_portal"
+    ```
 
-   ```bash
-   pip install -r requirements.txt
+2.  **Create and activate a virtual environment:**
+    ```bash
+    python3 -m venv .venv
+    source .venv/bin/activate
+    ```
+    *On Windows, use `.venv\Scripts\activate`*
 
-4. Run the application:
+3.  **Install the required dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-   ```bash
-   python app.py
+4.  **Set up environment variables:**
+    Create a `.env` file in the root of the `job_portal` directory and add your database connection string:
+    ```
+    DB_URL="mysql+pymysql://<user>:<password>@<host>/<dbname>"
+    ```
+    Replace `<user>`, `<password>`, `<host>`, and `<dbname>` with your MySQL database credentials.
 
-5. Open in browser:
+5.  **Run the application:**
+    ```bash
+    python app.py
+    ```
+    The application will be available at `http://127.0.0.1:5000`.
 
-   ```bash
-   http://127.0.0.1:5000
+## Database Schema
+
+The application uses two main tables: `jobs` and `form` (for applications).
+
+### `jobs` table
+- `id` (Integer, Primary Key)
+- `title` (String)
+- `location` (String)
+- `salary` (Integer)
+- `currency` (String)
+- `responsibility` (String)
+- `requirements` (String)
+
+### `form` table
+- `id` (Integer, Primary Key)
+- `full_name` (String)
+- `email` (String)
+- `education` (String)
+- `work_experience` (String)
+- `resume_url` (String)
+- `job_id` (Integer, Foreign Key to `jobs.id`)
+
 
 ## License
 
-This project is licensed under the **MIT License** – see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 
 
